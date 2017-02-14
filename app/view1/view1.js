@@ -10,9 +10,9 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope','dataService', function($scope, dataService) {
-  //console.log("View1Ctrl \n\n\n\n");
+  console.log("View1Ctrl \n\n\n\n");
 
-  $scope.users = dataService.getUserList();
-
-
+  dataService.getUserList().then(function(data){
+      $scope.users = data;
+  });
 }]);
